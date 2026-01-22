@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BASICサッカースクール｜蟹江・中川区で基礎から学べるサッカースクール</title>
+
+<meta name="description" content="蟹江町・名古屋市中川区で基礎から学べる個人育成型サッカースクール。幼児・小学生対象。無料体験実施中。">
+<meta name="keywords" content="蟹江 サッカースクール, 中川区 サッカー, 小学生 サッカー">
+
+<style>
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;
+  line-height:1.9;
+  color:#111;
+}
+section{padding:90px 20px;}
+.inner{max-width:980px;margin:auto;}
+.center{text-align:center;}
+.big{font-size:2.2rem;font-weight:800;}
+.mid{font-size:1.2rem;font-weight:600;}
+.red{color:#e60012;}
+
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:18px 42px;
+  background:#e60012;
+  color:#fff;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:800;
+}
+
+/* アニメーション */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+.reveal.show{opacity:1;transform:none;}
+
+/* FV */
+.hero{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url("./images/fv.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  color:#fff;
+}
+.hero-box{
+  background:rgba(0,0,0,.55);
+  padding:60px 35px;
+  border-radius:28px;
+}
+
+/* 背景 */
+.bg1{
+  background:
+    linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.9)),
+    url("./images/bg_section1.jpg") center/cover no-repeat;
+}
+.bg2{
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+}
+
+/* お知らせ */
+.news{
+  background:#fff;
+  border-radius:24px;
+  padding:40px 25px;
+}
+.news-item{
+  border-bottom:1px solid #eee;
+  padding:12px 0;
+}
+.news-item:last-child{border:none;}
+.news-date{
+  font-weight:700;
+  color:#e60012;
+  font-size:.95rem;
+}
+
+/* コーチ */
+.coaches{display:grid;gap:40px;}
+.coach{
+  background:#f9f9f9;
+  padding:30px 20px;
+  border-radius:22px;
+}
+.coach img{
+  width:110px;height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:12px;
+}
+.coach ul{text-align:left;padding-left:18px;font-size:.95rem;}
+
+/* QR */
+.qrs{display:flex;justify-content:center;gap:40px;margin-top:40px;}
+.qrs img{
+  width:120px;
+  background:#fff;
+  padding:10px;
+  border-radius:16px;
+}
+
+/* 固定CTA */
+.fixed-cta{
+  position:fixed;
+  bottom:0;left:0;width:100%;
+  background:#e60012;
+  padding:14px;
+  text-align:center;
+}
+.fixed-cta a{color:#fff;font-weight:800;text-decoration:none;}
+</style>
+</head>
+
+<body>
+
+<!-- FV -->
+<section class="hero">
+  <div class="inner hero-box center reveal">
+    <h1 class="big">基礎が変われば<br>サッカーは一気に変わる。</h1>
+    <p>BASICサッカースクール</p>
+    <a href="#contact" class="btn">無料体験はこちら</a>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="bg1">
+  <div class="inner reveal">
+    <h2 class="big center">お知らせ</h2>
+    <div id="newsArea" class="news"></div>
+  </div>
+</section>
+
+<!-- 特徴 -->
+<section class="bg2">
+  <div class="inner center reveal">
+    <h2 class="big">BASICが選ばれる理由</h2>
+    <p>
+      ✔ 基礎特化の個人育成<br>
+      ✔ フットサル要素導入<br>
+      ✔ トレーナー監修<br>
+      ✔ 動画フィードバック
+    </p>
+    <a href="./BASICサッカースクール概要.pdf" target="_blank" class="btn">
+      📄 スクール資料を見る
+    </a>
+  </div>
+</section>
+
+<!-- コーチ -->
+<section>
+  <div class="inner reveal">
+    <h2 class="big center">コーチ紹介</h2>
+
+    <div class="coaches">
+      <div class="coach center">
+        <img src="./images/coach1.jpg">
+        <h3>太田コーチ</h3>
+        <ul>
+          <li>同朋高校 卒業</li>
+          <li>海外3か国プレー経験</li>
+        </ul>
+      </div>
+
+      <div class="coach center">
+        <img src="./images/coach2.jpg">
+        <h3>岡田コーチ</h3>
+        <ul>
+          <li>高校・クラブチーム指導</li>
+        </ul>
+      </div>
+
+      <div class="coach center">
+        <img src="./images/coach3.jpg">
+        <h3>川本コーチ</h3>
+        <ul>
+          <li>名古屋オーシャンズ サテライト</li>
+          <li>アグレミーナ浜松</li>
+          <li>ヴィンセドール白山</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg2" id="contact">
+  <div class="inner center reveal">
+    <h2 class="big">まずは無料体験から</h2>
+    <div class="qrs">
+      <img src="./images/line_qr.png">
+      <img src="./images/instagram_qr.png">
+    </div>
+  </div>
+</section>
+
+<div class="fixed-cta">
+  <a href="#contact">📩 無料体験はこちら</a>
+</div>
+
+<script>
+/* ===== お知らせ自動更新 ===== */
+const newsData = [
+  { date: "2026.03.01", text: "3月無料体験実施中！" },
+  { date: "2026.02.01", text: "詳細は2月以降に更新します" }
+];
+
+const newsArea = document.getElementById("newsArea");
+newsData.forEach(item=>{
+  const div=document.createElement("div");
+  div.className="news-item";
+  div.innerHTML=`<div class="news-date">${item.date}</div>${item.text}`;
+  newsArea.appendChild(div);
+});
+
+/* アニメーション */
+const els=document.querySelectorAll(".reveal");
+const show=()=>{
+  els.forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-80){
+      el.classList.add("show");
+    }
+  });
+};
+window.addEventListener("scroll",show);
+show();
+</script>
+
+</body>
+</html>
