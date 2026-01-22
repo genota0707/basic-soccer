@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BASICサッカースクール</title>
+
+<style>
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Hiragino Kaku Gothic ProN",sans-serif;
+  color:#fff;
+  background:#000;
+}
+
+/* ===== 共通 ===== */
+section{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:70px 20px;
+}
+
+.inner{
+  max-width:900px;
+  margin:auto;
+  background:rgba(0,0,0,.6);
+  padding:35px;
+  border-radius:18px;
+}
+
+h1,h2{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+/* ===== 文字アニメ ===== */
+.text{
+  opacity:0;
+  transform:translateY(30px) scale(.95);
+  transition:1s ease;
+}
+.text.show{
+  opacity:1;
+  transform:none;
+}
+.delay1{transition-delay:.2s;}
+.delay2{transition-delay:.5s;}
+.delay3{transition-delay:.8s;}
+
+/* ===== 背景 ===== */
+.hero{background:url("bg_hero.jpg") center/cover no-repeat;}
+.concept{background:url("bg_concept.jpg") center/cover no-repeat;}
+.feature{background:url("bg_feature.jpg") center/cover no-repeat;}
+
+/* ===== 色背景 ===== */
+.schedule{
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+}
+
+/* ===== コーチ ===== */
+.coaches{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:25px;
+}
+.coach{text-align:center;}
+.coach img{
+  width:140px;
+  height:140px;
+  object-fit:cover;
+  border-radius:50%;
+  margin-bottom:10px;
+}
+
+/* ===== QR ===== */
+.qrs{
+  display:flex;
+  justify-content:space-around;
+  margin-top:30px;
+}
+.qrs img{width:120px;}
+
+/* ===== ボタン ===== */
+.btn{
+  display:block;
+  text-align:center;
+  background:#1e90ff;
+  color:#fff;
+  padding:15px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:bold;
+  margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="inner">
+    <h1 class="text delay1">BASICサッカースクール</h1>
+    <p class="text delay2" style="text-align:center;">
+      全てのプレーの基礎レベルを上げる
+    </p>
+    <p class="text delay3" style="text-align:center;">
+      個人育成型サッカースクール
+    </p>
+  </div>
+</section>
+
+<!-- CONCEPT -->
+<section class="concept">
+  <div class="inner">
+    <h2 class="text delay1">スクール理念</h2>
+    <p class="text delay2">
+      基礎は派手ではありません。<br>
+      しかし、最も重要で、最もこだわるべき部分です。<br><br>
+      確かな土台があるからこそ、<br>
+      子どもたちの個性は輝きます。
+    </p>
+
+    <a href="BASICサッカースクール概要.pdf" target="_blank" class="btn text delay3">
+      📄 スクール資料（PDF）を見る
+    </a>
+  </div>
+</section>
+
+<!-- FEATURE -->
+<section class="feature">
+  <div class="inner">
+    <h2 class="text delay1">スクールの特徴</h2>
+    <ul class="text delay2">
+      <li>止める・蹴る・運ぶ・シュートの基礎を徹底</li>
+      <li>海外経験のあるスタッフによる指導</li>
+      <li>元Fリーガーによる月2回フットサル指導</li>
+      <li>動画を活用した個別フィードバック</li>
+    </ul>
+  </div>
+</section>
+
+<!-- COACH -->
+<section class="concept">
+  <div class="inner">
+    <h2 class="text delay1">コーチ紹介</h2>
+
+    <div class="coaches">
+      <div class="coach text delay1">
+        <img src="coach1.jpg">
+        <strong>太田 弦</strong>
+        <p>海外3カ国でプレー<br>FCティアモ枚方</p>
+      </div>
+
+      <div class="coach text delay2">
+        <img src="coach2.jpg">
+        <strong>岡田 雄真</strong>
+        <p>小学生〜高校生<br>約10年指導</p>
+      </div>
+
+      <div class="coach text delay3">
+        <img src="coach3.jpg">
+        <strong>川本 樹弥</strong>
+        <p>元Fリーガー</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule">
+  <div class="inner">
+    <h2 class="text delay1">日時・場所</h2>
+    <p class="text delay2">
+      【開催日】水・木・土<br><br>
+      水：19:00〜20:30（小学生）<br>
+      木：19:00〜21:00（小学生）<br>
+      土：9:15〜10:30（幼児）<br>
+      土：10:30〜12:00（自主練）<br><br>
+      場所：JR春田駅付近／近鉄蟹江駅付近
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="schedule">
+  <div class="inner">
+    <h2 class="text delay1">お問い合わせ</h2>
+
+    <div class="qrs text delay2">
+      <div>
+        <img src="line_qr.png">
+        <p>公式LINE</p>
+      </div>
+      <div>
+        <img src="instagram_qr.png">
+        <p>Instagram</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const texts=document.querySelectorAll(".text");
+const animate=()=>{
+  texts.forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-80){
+      el.classList.add("show");
+    }
+  });
+};
+window.addEventListener("scroll",animate);
+animate();
+</script>
+
+</body>
+</html>
