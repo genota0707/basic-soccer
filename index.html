@@ -1,4 +1,4 @@
-YPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,6 @@ YPE html>
             background-size: cover;
             background-position: center;
         }
-        .logo-img { height: 50px; width: auto; object-fit: contain; }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.show { opacity: 1; transform: translateY(0); }
         .grad-blue { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); }
@@ -46,10 +45,10 @@ YPE html>
         <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
             <div class="flex items-center">
                 <a href="#" class="flex items-center gap-3 hover:opacity-80 transition">
-                    <img src="line_oa_chat_260206_093953.jpg" alt="BASIC SOCCER SCHOOL" class="logo-img">
-                    <div class="hidden sm:block">
-                        <span class="block text-xs font-black text-sky-600 leading-none mb-1">BASIC</span>
-                        <span class="block text-[10px] font-bold text-slate-400 leading-none italic uppercase tracking-tighter">Soccer School</span>
+                    <!-- 画像の代わりにテキストロゴを配置 -->
+                    <div class="flex flex-col justify-center">
+                        <span class="block text-2xl font-black text-sky-600 leading-none italic tracking-tighter">BASIC</span>
+                        <span class="block text-[10px] font-bold text-slate-400 leading-none italic uppercase tracking-widest">Soccer School</span>
                     </div>
                 </a>
             </div>
@@ -226,21 +225,21 @@ YPE html>
             <div class="grid lg:grid-cols-3 gap-8 text-left">
                 <div class="bg-white rounded-[3rem] p-8 shadow-xl reveal">
                     <div class="w-40 h-40 mx-auto mb-6 rounded-full bg-slate-100 overflow-hidden border-4 border-white shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=400&q=80" alt="Ota Coach" class="w-full h-full object-cover">
+                        <img src="coach1.jpg" alt="Ota Coach" class="w-full h-full object-cover">
                     </div>
                     <h4 class="text-2xl font-black italic text-center mb-4">太田コーチ</h4>
                     <p class="text-sm font-bold text-slate-600">フランス・ルーマニア等、海外3カ国でプレー。世界基準の土台を指導します。</p>
                 </div>
                 <div class="bg-white rounded-[3rem] p-8 shadow-xl reveal">
                     <div class="w-40 h-40 mx-auto mb-6 rounded-full bg-slate-100 overflow-hidden border-4 border-white shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?auto=format&fit=crop&w=400&q=80" alt="Okada Coach" class="w-full h-full object-cover">
+                        <img src="coach2.jpg" alt="Okada Coach" class="w-full h-full object-cover">
                     </div>
                     <h4 class="text-2xl font-black italic text-center mb-4">岡田コーチ</h4>
                     <p class="text-sm font-bold text-slate-600">同朋高校・北名古屋FC等で指導。子どもの個性を引き出す育成のエキスパート。</p>
                 </div>
                 <div class="bg-white rounded-[3rem] p-8 shadow-xl reveal">
                     <div class="w-40 h-40 mx-auto mb-6 rounded-full bg-slate-100 overflow-hidden border-4 border-white shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1510566337590-2fc1f21d0faa?auto=format&fit=crop&w=400&q=80" alt="Kawamoto Coach" class="w-full h-full object-cover">
+                        <img src="coach3.jpg" alt="Kawamoto Coach" class="w-full h-full object-cover">
                     </div>
                     <h4 class="text-2xl font-black italic text-center mb-4">川本コーチ</h4>
                     <p class="text-sm font-bold text-slate-600">元Fリーガー。圧倒的な足元の技術を子どもたちに直接伝授します。</p>
@@ -304,7 +303,11 @@ YPE html>
     <!-- Footer -->
     <footer class="bg-slate-900 py-16 text-center text-white">
         <div class="flex justify-center mb-8">
-            <img src="line_oa_chat_260206_093953.jpg" alt="Logo" class="h-12">
+            <!-- フッターも同様に画像からテキストロゴに変更 -->
+            <div class="flex flex-col justify-center text-center">
+                <span class="block text-xl font-black text-sky-400 leading-none italic tracking-tighter">BASIC</span>
+                <span class="block text-[8px] font-bold text-slate-500 leading-none italic uppercase tracking-widest mt-1">Soccer School</span>
+            </div>
         </div>
         
         <div class="flex justify-center gap-6 mb-10">
@@ -329,8 +332,8 @@ YPE html>
 
         const toggleMenu = () => mobileMenu.classList.toggle('active');
 
-        menuBtn.addEventListener('click', toggleMenu);
-        closeBtn.addEventListener('click', toggleMenu);
+        if(menuBtn) menuBtn.addEventListener('click', toggleMenu);
+        if(closeBtn) closeBtn.addEventListener('click', toggleMenu);
 
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
