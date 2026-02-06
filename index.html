@@ -1,249 +1,355 @@
-<!DOCTYPE html>
+YPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASICサッカースクール | 蟹江・名古屋市中川区の個人育成型スクール</title>
+    <meta name="description" content="蟹江町・名古屋市中川区。初心者から経験者まで、「基本」を極めて自信を育てるサッカースクール。海外経験・元Fリーガーが直接指導。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans JP', sans-serif; scroll-behavior: smooth; }
+        .hero-bg {
+            background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.2)), url('fv.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .logo-img { height: 50px; width: auto; object-fit: contain; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.show { opacity: 1; transform: translateY(0); }
+        .grad-blue { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); }
+        .text-focus { color: #0284c7; }
+        .bg-focus { background-color: #0ea5e9; }
+        
+        /* Instagram gradient */
+        .bg-instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
 
-<title>BASICサッカースクール｜蟹江・中川区で基礎から学べるサッカースクール</title>
+        /* Smooth scroll offset */
+        section { scroll-margin-top: 80px; }
 
-<link rel="icon" href="./favicon.png" type="image/png">
-
-<meta name="description" content="蟹江町・名古屋市中川区で基礎から学べる個人育成型サッカースクール。幼児・小学生対象。無料体験実施中。">
-<meta name="keywords" content="蟹江 サッカースクール, 中川区 サッカー, 小学生 サッカー">
-
-<style>
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;
-  line-height:1.9;
-  color:#111;
-}
-section{padding:90px 20px;}
-.inner{max-width:980px;margin:auto;}
-.center{text-align:center;}
-.big{font-size:2.2rem;font-weight:800;}
-.mid{font-size:1.2rem;font-weight:600;}
-.red{color:#e60012;}
-
-.btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:18px 42px;
-  background:#e60012;
-  color:#fff;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:800;
-}
-
-/* アニメーション */
-.reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s;
-}
-.reveal.show{opacity:1;transform:none;}
-
-/* FV */
-.hero{
-  min-height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-    url("./images/fv.jpg") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  color:#fff;
-}
-.hero-box{
-  background:rgba(0,0,0,.55);
-  padding:60px 35px;
-  border-radius:28px;
-}
-
-/* 背景 */
-.bg1{
-  background:
-    linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.9)),
-    url("./images/bg_section1.jpg") center/cover no-repeat;
-}
-.bg2{
-  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  color:#fff;
-}
-
-/* お知らせ */
-.news{
-  background:#fff;
-  border-radius:24px;
-  padding:40px 25px;
-}
-.news-item{
-  border-bottom:1px solid #eee;
-  padding:12px 0;
-}
-.news-item:last-child{border:none;}
-.news-date{
-  font-weight:700;
-  color:#e60012;
-  font-size:.95rem;
-}
-
-/* コーチ */
-.coaches{display:grid;gap:40px;}
-.coach{
-  background:#f9f9f9;
-  padding:30px 20px;
-  border-radius:22px;
-}
-.coach img{
-  width:110px;height:110px;
-  border-radius:50%;
-  object-fit:cover;
-  margin-bottom:12px;
-}
-.coach ul{text-align:left;padding-left:18px;font-size:.95rem;}
-
-/* QR */
-.qrs{display:flex;justify-content:center;gap:40px;margin-top:40px;}
-.qrs img{
-  width:120px;
-  background:#fff;
-  padding:10px;
-  border-radius:16px;
-}
-
-/* 固定CTA */
-.fixed-cta{
-  position:fixed;
-  bottom:0;left:0;width:100%;
-  background:#e60012;
-  padding:14px;
-  text-align:center;
-}
-.fixed-cta a{color:#fff;font-weight:800;text-decoration:none;}
-</style>
+        /* Mobile menu control */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
 </head>
+<body class="bg-white text-slate-800 overflow-x-hidden">
 
-<body>
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="flex items-center gap-3 hover:opacity-80 transition">
+                    <img src="line_oa_chat_260206_093953.jpg" alt="BASIC SOCCER SCHOOL" class="logo-img">
+                    <div class="hidden sm:block">
+                        <span class="block text-xs font-black text-sky-600 leading-none mb-1">BASIC</span>
+                        <span class="block text-[10px] font-bold text-slate-400 leading-none italic uppercase tracking-tighter">Soccer School</span>
+                    </div>
+                </a>
+            </div>
+            
+            <nav class="hidden lg:flex space-x-6 font-bold text-sm text-slate-600 italic items-center">
+                <a href="#philosophy" class="hover:text-sky-500 transition uppercase tracking-tighter">Philosophy</a>
+                <a href="#schedule" class="hover:text-sky-500 transition uppercase tracking-tighter">Schedule</a>
+                <a href="#feature" class="hover:text-sky-500 transition uppercase tracking-tighter">Feature</a>
+                <a href="#coach" class="hover:text-sky-500 transition uppercase tracking-tighter">Coach</a>
+                <a href="BASICサッカースクール概要.pdf" target="_blank" class="hover:text-sky-500 transition uppercase tracking-tighter flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    School Guide
+                </a>
+                <a href="https://www.instagram.com/basic_school1109" target="_blank" class="hover:opacity-70 transition">
+                    <svg class="w-5 h-5 text-slate-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <div class="h-4 w-[1px] bg-slate-200 mx-2"></div>
+                <a href="#contact" class="bg-focus text-white px-5 py-2.5 rounded-full hover:bg-sky-600 transition shadow-lg shadow-sky-500/20 text-xs">無料体験申し込み</a>
+            </nav>
 
-<!-- FV -->
-<section class="hero">
-  <div class="inner hero-box center reveal">
-    <h1 class="big">基礎が変われば<br>サッカーは一気に変わる。</h1>
-    <p>BASICサッカースクール</p>
-    <a href="#contact" class="btn">無料体験はこちら</a>
-  </div>
-</section>
+            <button id="menu-btn" class="lg:hidden p-2 text-slate-600 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </header>
 
-<!-- お知らせ -->
-<section class="bg1">
-  <div class="inner reveal">
-    <h2 class="big center">お知らせ</h2>
-    <div id="newsArea" class="news"></div>
-  </div>
-</section>
-
-<!-- 特徴 -->
-<section class="bg2">
-  <div class="inner center reveal">
-    <h2 class="big">BASICサッカースクールが選ばれる理由</h2>
-    <p>
-      ✔ 基礎特化の個人育成<br>
-      ✔ 月2回のフットサルレッスン開催<br>
-      ✔ なでしこリーグ所属チームのトレーナー監修メニュー採用<br>
-      ✔ 練習撮影による月1回フィードバック
-    </p>
-    <a href="./BASICサッカースクール概要.pdf" target="_blank" class="btn">
-      📄 スクール資料を見る
-    </a>
-  </div>
-</section>
-
-<!-- コーチ -->
-<section>
-  <div class="inner reveal">
-    <h2 class="big center">コーチ紹介</h2>
-
-    <div class="coaches">
-      <div class="coach center">
-        <img src="./images/coach1.jpg">
-        <h3>太田コーチ</h3>
-        <ul>
-          <li>同朋高校 卒業→海外3か国でプレー</li>
-          <li>フランス</li>
-          <li>ルーマニア</li>
-          <li>ラトビア</li>
-       </ul>
-      </div>
-
-      <div class="coach center">
-        <img src="./images/coach2.jpg">
-        <h3>岡田コーチ</h3>
-        <ul>
-          <li>同朋高校(外部コーチ)</li>
-          <li>北名古屋FC(コーチ)</li>
-          <li>ラーテルFC(コーチ)</li>
-       </ul>
-      </div>
-
-      <div class="coach center">
-        <img src="./images/coach3.jpg">
-        <h3>川本コーチ</h3>
-        <ul>
-          <li>名古屋オーシャンズ サテライト</li>
-          <li>アグレミーナ浜松(F2)</li>
-          <li>ヴィンセドール白山(F2)</li>
-        </ul>
-      </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-slate-900 z-[60] flex flex-col items-center justify-center space-y-8 text-center lg:hidden">
+        <button id="close-btn" class="absolute top-6 right-6 text-white text-4xl">×</button>
+        <a href="#philosophy" class="mobile-link text-2xl font-black text-white italic tracking-tighter">Philosophy</a>
+        <a href="#schedule" class="mobile-link text-2xl font-black text-white italic tracking-tighter">Schedule</a>
+        <a href="#feature" class="mobile-link text-2xl font-black text-white italic tracking-tighter">Feature</a>
+        <a href="#coach" class="mobile-link text-2xl font-black text-white italic tracking-tighter">Coach</a>
+        <a href="BASICサッカースクール概要.pdf" target="_blank" class="mobile-link text-2xl font-black text-sky-400 italic tracking-tighter flex items-center gap-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+            School Guide
+        </a>
+        <div class="flex gap-6 pt-4">
+            <a href="https://www.instagram.com/basic_school1109" target="_blank" class="mobile-link text-white flex items-center gap-2 font-bold italic">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                Instagram
+            </a>
+        </div>
+        <div class="pt-8">
+            <a href="#contact" class="mobile-link bg-focus text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl shadow-sky-500/20">無料体験に申し込む</a>
+        </div>
     </div>
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="bg2" id="contact">
-  <div class="inner center reveal">
-    <h2 class="big">公式LINEから無料体験お問い合わせ</h2>
-    <div class="qrs">
-      <img src="./images/line_qr.png">
-      <img src="./images/instagram_qr.png">
-    </div>
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center justify-center text-center pt-20">
+        <div class="max-w-5xl px-4">
+            <div class="inline-block bg-white/90 text-sky-600 font-bold px-6 py-2 rounded-full mb-8 shadow-sm border border-sky-100">
+                蟹江・名古屋市中川区 | 初心者・未経験者大歓迎！
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight text-slate-900 italic tracking-tighter">
+                「基本」の質が、<br>
+                <span class="text-focus underline decoration-sky-200 decoration-8 underline-offset-8">未来の個性を輝かせる。</span>
+            </h1>
+            <p class="text-lg md:text-2xl mb-12 text-slate-700 leading-relaxed font-bold max-w-3xl mx-auto">
+                国内外で活躍できる選手の育成を目指す、個人育成型スクール。<br>
+                「止める・蹴る・運ぶ」への圧倒的なこだわりが、一生モノの自信を作ります。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#contact" class="w-full sm:w-auto bg-focus text-white px-12 py-5 rounded-full font-black text-2xl hover:scale-105 transition-transform shadow-2xl flex items-center justify-center gap-2">
+                    無料体験予約はこちら <span class="text-xl">→</span>
+                </a>
+                <a href="BASICサッカースクール概要.pdf" target="_blank" class="w-full sm:w-auto bg-white/80 backdrop-blur text-slate-600 px-8 py-5 rounded-full font-bold text-lg hover:bg-white transition-colors border border-slate-200 flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    School Guide
+                </a>
+            </div>
+        </div>
+    </section>
 
-<div class="fixed-cta">
-  <a href="#contact">📩 無料体験はこちら</a>
-</div>
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-16 bg-white relative">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-8 reveal">
+                <div class="bg-sky-50 rounded-3xl p-8 border-2 border-sky-100 shadow-sm relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-sky-500 text-white px-4 py-1 rounded-bl-xl font-black text-xs">NAKAGAWA</div>
+                    <h3 class="text-2xl font-black text-slate-800 mb-4 flex items-center gap-2 italic">
+                        <span class="w-3 h-8 bg-sky-500 rounded-full inline-block"></span>
+                        中川校
+                    </h3>
+                    <div class="flex items-baseline gap-2 mb-2">
+                        <span class="text-4xl font-black text-sky-600 tracking-tighter text-[min(10vw,40px)]">水曜日・土曜日</span>
+                    </div>
+                    <p class="text-slate-500 font-bold text-sm mb-6">名古屋市中川区で活動中</p>
+                    <a href="#contact" class="flex items-center justify-center gap-2 bg-[#06C755] text-white py-3 rounded-xl font-bold text-sm hover:opacity-90 transition">
+                        <span>詳細はLINEにてお問合せください</span>
+                    </a>
+                </div>
+                <div class="bg-slate-50 rounded-3xl p-8 border-2 border-slate-200 shadow-sm relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-slate-800 text-white px-4 py-1 rounded-bl-xl font-black text-xs">KANIE</div>
+                    <h3 class="text-2xl font-black text-slate-800 mb-4 flex items-center gap-2 italic">
+                        <span class="w-3 h-8 bg-slate-800 rounded-full inline-block"></span>
+                        蟹江校
+                    </h3>
+                    <div class="flex items-baseline gap-2 mb-2">
+                        <span class="text-4xl font-black text-slate-800 tracking-tighter text-[min(10vw,40px)]">木曜日</span>
+                    </div>
+                    <p class="text-slate-500 font-bold text-sm mb-6">海部郡蟹江町で活動中</p>
+                    <a href="#contact" class="flex items-center justify-center gap-2 bg-[#06C755] text-white py-3 rounded-xl font-bold text-sm hover:opacity-90 transition">
+                        <span>詳細はLINEにてお問合せください</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-/* ===== お知らせ自動更新 ===== */
-const newsData = [
-  { date: "2026.01.22", text: "3月無料体験実施します！" },
-  { date: "2026.01.22", text: "詳細は2月以降に更新します" }
-];
+    <!-- Philosophy -->
+    <section id="philosophy" class="py-24 grad-blue overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <span class="text-focus font-black tracking-[0.3em] uppercase mb-4 block">Philosophy</span>
+                <h2 class="text-4xl font-black text-slate-900 italic">「見えにくい基本」に丁寧に向き合う</h2>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <div class="space-y-6 text-slate-700 leading-relaxed text-lg font-medium">
+                        <p>私たちのゴールは、国内外で活躍できる選手の育成です。そのために「基本のレベルを高めること」を何より大切にしています。</p>
+                        <p class="bg-white/80 p-6 rounded-2xl border-l-8 border-focus shadow-sm">
+                            <span class="block font-black text-slate-900 mb-2 text-focus">人としての育成も大切に</span>
+                            子どもたちが「考え、行動し、経験する」。そのプロセスにこそ本当の成長があると信じています。
+                        </p>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=800&q=80" alt="Philosophy Image" class="rounded-[3rem] shadow-2xl rotate-2">
+                </div>
+            </div>
+        </div>
+    </section>
 
-const newsArea = document.getElementById("newsArea");
-newsData.forEach(item=>{
-  const div=document.createElement("div");
-  div.className="news-item";
-  div.innerHTML=`<div class="news-date">${item.date}</div>${item.text}`;
-  newsArea.appendChild(div);
-});
+    <!-- Features -->
+    <section id="feature" class="py-24 bg-slate-900 text-white rounded-[3rem] md:rounded-[5rem] mx-4 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 italic tracking-tighter text-sky-400">FEATURES</h2>
+                <p class="font-bold uppercase tracking-[0.4em]">スクールの特徴</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 reveal">
+                    <div class="text-4xl mb-6">🎯</div>
+                    <h4 class="text-xl font-black mb-4 text-sky-400 italic">基本の徹底</h4>
+                    <p class="text-slate-400 text-sm">止める・蹴る・運ぶの基礎レベル向上にこだわります。</p>
+                </div>
+                <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 reveal">
+                    <div class="text-4xl mb-6">🌎</div>
+                    <h4 class="text-xl font-black mb-4 text-sky-400 italic">海外経験</h4>
+                    <p class="text-slate-400 text-sm">海外3カ国でプレーしたスタッフが直接伝えます。</p>
+                </div>
+                <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 reveal">
+                    <div class="text-4xl mb-6">🎥</div>
+                    <h4 class="text-xl font-black mb-4 text-sky-400 italic">月1回レポート</h4>
+                    <p class="text-slate-400 text-sm">練習を録画し、プレーを可視化したレポートを共有します。</p>
+                </div>
+                <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 reveal">
+                    <div class="text-4xl mb-6">👟</div>
+                    <h4 class="text-xl font-black mb-4 text-sky-400 italic">フットサル融合</h4>
+                    <p class="text-slate-400 text-sm">元Fリーガーによる特別レッスンを定期開催予定。</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-/* アニメーション */
-const els=document.querySelectorAll(".reveal");
-const show=()=>{
-  els.forEach(el=>{
-    if(el.getBoundingClientRect().top < window.innerHeight-80){
-      el.classList.add("show");
-    }
-  });
-};
-window.addEventListener("scroll",show);
-show();
-</script>
+    <!-- Coach Section -->
+    <section id="coach" class="py-24 grad-blue">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-4 italic tracking-tighter">COACHES</h2>
+                <p class="text-focus font-bold tracking-widest uppercase">プロを知るスタッフ</p>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-8 text-left">
+                <div class="bg-white rounded-[3rem] p-8 shadow-xl reveal">
+                    <div class="w-40 h-40 mx-auto mb-6 rounded-full bg-slate-100 overflow-hidden border-4 border-white shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=400&q=80" alt="Ota Coach" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-2xl font-black italic text-center mb-4">太田コーチ</h4>
+                    <p class="text-sm font-bold text-slate-600">フランス・ルーマニア等、海外3カ国でプレー。世界基準の土台を指導します。</p>
+                </div>
+                <div class="bg-white rounded-[3rem] p-8 shadow-xl reveal">
+                    <div class="w-40 h-40 mx-auto mb-6 rounded-full bg-slate-100 overflow-hidden border-4 border-white shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?auto=format&fit=crop&w=400&q=80" alt="Okada Coach" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-2xl font-black italic text-center mb-4">岡田コーチ</h4>
+                    <p class="text-sm font-bold text-slate-600">同朋高校・北名古屋FC等で指導。子どもの個性を引き出す育成のエキスパート。</p>
+                </div>
+                <div class="bg-white rounded-[3rem] p-8 shadow-xl reveal">
+                    <div class="w-40 h-40 mx-auto mb-6 rounded-full bg-slate-100 overflow-hidden border-4 border-white shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1510566337590-2fc1f21d0faa?auto=format&fit=crop&w=400&q=80" alt="Kawamoto Coach" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-2xl font-black italic text-center mb-4">川本コーチ</h4>
+                    <p class="text-sm font-bold text-slate-600">元Fリーガー。圧倒的な足元の技術を子どもたちに直接伝授します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-slate-900 text-white rounded-[3rem] p-8 md:p-16 text-center mb-16 shadow-2xl reveal relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-sky-500/20 blur-3xl"></div>
+                <h2 class="text-3xl md:text-4xl font-black italic mb-4 relative z-10">お問い合わせ・体験申し込み</h2>
+                <p class="mb-12 font-bold text-slate-400 relative z-10">LINEからでもお気軽にご連絡いただけます</p>
+                <div class="grid sm:grid-cols-2 gap-6 relative z-10">
+                    <a href="#" class="flex items-center justify-center gap-3 bg-[#06C755] text-white px-8 py-5 rounded-3xl font-black text-xl hover:scale-105 transition shadow-lg">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.51 2 9.83c0 2.15.91 4.15 2.53 5.61l-.63 2.32c-.07.26.15.48.4.41l2.75-.82c.9.29 1.88.45 2.95.45 5.52 0 10-3.51 10-7.83S17.52 2 12 2z"/></svg>
+                        公式LINE
+                    </a>
+                    <a href="https://www.instagram.com/basic_school1109" target="_blank" class="flex items-center justify-center gap-3 bg-instagram text-white px-8 py-5 rounded-3xl font-black text-xl hover:scale-105 transition shadow-lg">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        Instagram
+                    </a>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="bg-slate-50 rounded-[3rem] p-8 md:p-12 reveal border border-slate-100">
+                <h3 class="text-2xl font-black mb-8 text-center italic text-slate-800">体験申し込みフォーム（LINEからでも可能です）</h3>
+                <form action="https://formspree.io/f/ogen0730@gmail.com" method="POST" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <input type="text" name="name" required placeholder="保護者様お名前" class="w-full p-4 rounded-2xl border border-slate-200 outline-none focus:border-focus">
+                        <input type="text" name="child_name" required placeholder="お子様お名前 (フリガナ)" class="w-full p-4 rounded-2xl border border-slate-200 outline-none focus:border-focus">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="block text-xs font-bold text-slate-500 ml-2">お子様の現在の学年</label>
+                        <select name="grade" required class="w-full p-4 rounded-2xl border border-slate-200 outline-none focus:border-focus bg-white">
+                            <option value="">学年を選択してください</option>
+                            <optgroup label="幼稚園・保育園">
+                                <option value="年中">年中</option>
+                                <option value="年長">年長</option>
+                            </optgroup>
+                            <optgroup label="小学校">
+                                <option value="小学1年生">小学1年生</option>
+                                <option value="小学2年生">小学2年生</option>
+                                <option value="小学3年生">小学3年生</option>
+                                <option value="小学4年生">小学4年生</option>
+                                <option value="小学5年生">小学5年生</option>
+                                <option value="小学6年生">小学6年生</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <textarea name="message" rows="4" placeholder="ご質問など（任意）" class="w-full p-4 rounded-2xl border border-slate-200 outline-none focus:border-focus"></textarea>
+                    <button type="submit" class="w-full bg-slate-900 text-white py-5 rounded-full font-black text-xl hover:bg-slate-800 transition shadow-xl">送信する</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-16 text-center text-white">
+        <div class="flex justify-center mb-8">
+            <img src="line_oa_chat_260206_093953.jpg" alt="Logo" class="h-12">
+        </div>
+        
+        <div class="flex justify-center gap-6 mb-10">
+            <a href="https://www.instagram.com/basic_school1109" target="_blank" class="p-3 bg-slate-800 rounded-full hover:bg-instagram transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="p-3 bg-slate-800 rounded-full hover:bg-[#06C755] transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.51 2 9.83c0 2.15.91 4.15 2.53 5.61l-.63 2.32c-.07.26.15.48.4.41l2.75-.82c.9.29 1.88.45 2.95.45 5.52 0 10-3.51 10-7.83S17.52 2 12 2z"/></svg>
+            </a>
+        </div>
+
+        <p class="text-xs text-slate-500 font-bold tracking-[0.3em] uppercase mb-4 italic">Fundamental is Everything.</p>
+        <p class="text-[10px] text-slate-700">© 2026 BASIC SOCCER SCHOOL.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        const toggleMenu = () => mobileMenu.classList.toggle('active');
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll(".reveal");
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < window.innerHeight - 80) {
+                    el.classList.add("show");
+                }
+            });
+        };
+        window.addEventListener("scroll", revealOnScroll);
+        window.addEventListener("load", revealOnScroll);
+    </script>
 </body>
 </html>
-
-
