@@ -179,7 +179,7 @@
         links: {
             line: "https://lin.ee/yodgItoA",
             instagram: "https://www.instagram.com/basic_school1109",
-            pdf: "BASICサッカースクール概要.pdf"
+            pdf: "BASICサッカースクール概要.png"
         }
     };
     </script>
@@ -205,10 +205,8 @@
                 </a>
                 <a href="#personal" class="hover:text-sky-400 transition py-2">パーソナル指導</a>
                 <a href="#coach" class="hover:text-sky-400 transition py-2">コーチ紹介</a>
-                <a href="BASICサッカースクール概要.pdf" target="_blank" class="hover:text-sky-400 transition flex items-center gap-1 text-slate-400">
-                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                    概要案内
-                </a>
+<button onclick="openOverviewModal()" class="hover:text-sky-400 transition flex items-center gap-1 text-slate-400 py-2 cursor-pointer font-bold text-xs tracking-wider focus:outline-none">
+    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>    概要案内</button>
                 <a href="#contact" class="bg-gradient-to-r from-sky-500 to-sky-600 text-white font-bold px-5 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(56,189,248,0.5)] transition duration-300 transform hover:-translate-y-0.5">無料体験申込</a>
             </nav>
 
@@ -229,9 +227,9 @@
             <a href="#basic-plus" class="mobile-link block text-xl font-black text-amber-400 hover:text-amber-300 border-b border-white/5 pb-2">選抜コース BASIC＋</a>
             <a href="#personal" class="mobile-link block text-xl font-black text-white hover:text-sky-400 border-b border-white/5 pb-2">パーソナルトレーニング</a>
             <a href="#coach" class="mobile-link block text-xl font-black text-white hover:text-sky-400 border-b border-white/5 pb-2">コーチ紹介</a>
-            <a href="BASICサッカースクール概要.pdf" target="_blank" class="mobile-link block text-xl font-black text-sky-400 flex items-center justify-between border-b border-white/5 pb-2">
-                スクール概要 <span class="text-xs bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded">PDF</span>
-            </a>
+<button onclick="openOverviewModal()" class="mobile-link w-full text-left text-xl font-black text-sky-400 flex items-center justify-between border-b border-white/5 pb-2 cursor-pointer focus:outline-none">
+    スクール概要 <span class="text-xs bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded">概要案内</span>
+</button>
         </div>
         <div class="flex gap-4 pt-2">
             <a href="https://www.instagram.com/basic_school1109" target="_blank" class="mobile-link flex items-center gap-2 text-slate-300 hover:text-pink-400 text-sm font-bold">
@@ -268,10 +266,8 @@
                 <a href="#contact" class="w-full sm:w-auto bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-400 hover:to-sky-500 text-white px-10 py-5 rounded-full font-black text-lg hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] transition duration-300 flex items-center justify-center gap-3">
                     無料体験予約はこちら <span class="text-xl">→</span>
                 </a>
-                <a href="BASICサッカースクール概要.pdf" target="_blank" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white px-8 py-5 rounded-full font-bold text-sm tracking-wider transition duration-300 border border-white/10 flex items-center justify-center gap-2">
-                    <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                    スクール概要案内 (PDF)
-                </a>
+<button onclick="openOverviewModal()" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white px-8 py-5 rounded-full font-bold text-sm tracking-wider transition duration-300 border border-white/10 flex items-center justify-center gap-2 cursor-pointer focus:outline-none">
+    <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>    スクール概要案内</button>
             </div>
         </div>
 
@@ -365,9 +361,9 @@
                         <h3 class="text-2xl font-bold text-white tracking-wide">蟹江校</h3>
                     </div>
                     <div class="mb-4">
-                        <span class="text-3xl sm:text-4xl font-black text-white tracking-tight">木曜日</span>
+                        <span class="text-3xl sm:text-4xl font-black text-white tracking-tight">火曜日・木曜日</span>
                     </div>
-                    <p class="text-slate-400 text-sm font-medium mb-8">海部郡蟹江町で活動中</p>
+                    <p class="text-slate-400 text-sm font-medium mb-8">海部郡蟹江町で活動中（火曜：BASIC＋選抜 / 木曜：通常）</p>
                     <a href="https://lin.ee/yodgItoA" target="_blank" class="flex items-center justify-center gap-2 bg-[#06C755] hover:bg-[#05b34c] text-white py-4 rounded-xl font-bold text-sm transition shadow-lg">
                         <span>詳細はLINEにてお問合せください</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
@@ -558,7 +554,7 @@
                         <img src="coach1.jpg" alt="太田コーチ" class="w-full h-full object-cover rounded-full">
                     </div>
                     <span class="text-sky-400 font-en text-xs tracking-widest uppercase block mb-1">REPRESENTATIVE & COACH</span>
-                    <h4 class="text-2xl font-bold text-white mb-4">太田コーチ</h4>
+                    <h4 class="text-2xl font-bold text-white mb-4">太田 弦 コーチ</h4>
                     <p class="text-sm font-medium text-slate-400 leading-relaxed text-left bg-black/20 p-4 rounded-xl">
                         BASICサッカースクール代表。フランス・ルーマニア等、海外3カ国でプレー。世界基準の「止める・蹴る・運ぶ・判断」の土台を指導します。
                     </p>
@@ -670,6 +666,29 @@
     </section>
 
     <!-- フッター -->
+    <!-- スクール概要ポップアップ（モーダル） -->
+    <div id="overview-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-3 sm:p-6" onclick="closeOverviewModal(event)">
+        <div class="relative max-w-2xl w-full max-h-[92vh] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-sky-500/30 flex flex-col transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
+            <!-- モーダルヘッダー -->
+            <div class="flex items-center justify-between px-6 py-4 bg-[#090d16] border-b border-white/10">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+                    <span class="font-bold text-sm text-white tracking-wider">BASICサッカースクール 概要案内</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="BASICサッカースクール概要.png" download="BASICサッカースクール概要.png" class="text-xs bg-sky-500/20 hover:bg-sky-500 text-sky-300 hover:text-white px-3 py-1.5 rounded-lg border border-sky-500/30 font-bold transition flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        保存する
+                    </a>
+                    <button onclick="closeOverviewModal()" class="text-slate-400 hover:text-white text-2xl p-1 leading-none focus:outline-none cursor-pointer" aria-label="閉じる">×</button>
+                </div>
+            </div>
+            <!-- 画像表示エリア（スクロール可能） -->
+            <div class="overflow-y-auto p-2 sm:p-4 flex-1 bg-black/40 flex justify-center">
+                <img src="BASICサッカースクール概要.png" alt="BASICサッカースクール 概要案内" class="w-full max-w-xl h-auto rounded-2xl shadow-lg border border-white/5 object-contain">
+            </div>
+        </div>
+    </div>
     <footer class="bg-[#05070c] py-16 text-center text-white border-t border-white/5">
         <div class="flex justify-center mb-6">
             <div class="flex flex-col items-center gap-2">
@@ -796,6 +815,42 @@
         };
         window.addEventListener("scroll", revealOnScroll);
         window.addEventListener("load", revealOnScroll);
+        // --- スクール概要モーダル制御 ---
+        function openOverviewModal() {
+            const modal = document.getElementById('overview-modal');
+            if (!modal) return;
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+            }
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                const content = modal.querySelector('div');
+                if (content) {
+                    content.classList.remove('scale-95');
+                    content.classList.add('scale-100');
+                }
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+        function closeOverviewModal(e) {
+            const modal = document.getElementById('overview-modal');
+            if (!modal) return;
+            modal.classList.add('opacity-0');
+            const content = modal.querySelector('div');
+            if (content) {
+                content.classList.remove('scale-100');
+                content.classList.add('scale-95');
+            }
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeOverviewModal();
+        });
     </script>
 </body>
 </html>
