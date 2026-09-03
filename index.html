@@ -154,22 +154,22 @@
                 {
                     date: "9月5日（土）",
                     times: [
-                        { time: "① 14:00〜15:30", status: "空きあり" },
-                        { time: "② 16:30〜18:00", status: "空きあり" }
+                        { time: "① 14:00〜15:30", status: "◯ 空きあり" },
+                        { time: "② 16:30〜18:00", status: "✕ 満席（受付終了）" }
                     ]
                 },
                 {
                     date: "9月19日（土）",
                     times: [
-                        { time: "① 14:00〜15:30", status: "空きあり" },
-                        { time: "② 16:30〜18:00", status: "空きあり" }
+                        { time: "① 14:00〜15:30", status: "✕ 満席（受付終了）" },
+                        { time: "② 16:30〜18:00", status: "◯ 空きあり" }
                     ]
                 },
                 {
                     date: "9月26日（土）",
                     times: [
-                        { time: "① 14:00〜15:30", status: "空きあり" },
-                        { time: "② 16:30〜18:00", status: "空きあり" }
+                        { time: "① 14:00〜15:30", status: "◯ 空きあり" },
+                        { time: "② 16:30〜18:00", status: "◯ 空きあり" }
                     ]
                 }
             ]
@@ -761,11 +761,19 @@
                 let timesHtml = '';
                 d.times.forEach(t => {
                     const isAvailable = t.status.includes('空き');
-                    const badgeBg = isAvailable ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-slate-700 text-slate-400';
+                    const badgeBg = isAvailable 
+                        ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold' 
+                        : 'bg-rose-500/20 text-rose-400 border border-rose-500/30 font-bold';
+                    const timeClass = isAvailable 
+                        ? 'text-xs sm:text-sm font-bold text-white' 
+                        : 'text-xs sm:text-sm font-bold text-slate-500 line-through';
+                    const rowClass = isAvailable 
+                        ? 'bg-black/40 border border-white/5' 
+                        : 'bg-black/20 border border-white/5 opacity-60';
                     timesHtml += `
-                    <div class="flex items-center justify-between bg-black/40 p-3 rounded-xl border border-white/5">
-                        <span class="text-xs sm:text-sm font-bold text-white">${t.time}</span>
-                        <span class="text-[11px] font-bold px-2 py-0.5 rounded-md ${badgeBg}">${t.status}</span>
+                    <div class="flex items-center justify-between ${rowClass} p-3 rounded-xl">
+                        <span class="${timeClass}">${t.time}</span>
+                        <span class="text-[11px] px-2.5 py-1 rounded-md ${badgeBg}">${t.status}</span>
                     </div>`;
                 });
 
