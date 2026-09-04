@@ -27,28 +27,16 @@
         .font-en { font-family: 'Montserrat', sans-serif; }
         .font-impact { font-family: 'Teko', sans-serif; }
 
-        <!-- ヒーロー背景 -->
+        /* ヒーロー背景 */
         .hero-bg {
-            background: linear-gradient(180deg, rgba(9, 13, 22, 0.75) 0%, rgba(9, 13, 22, 0.95) 100%), 
-                        url('fv.jpg') center/cover no-repeat fixed;
+            background-color: #090d16;
+            background-image: linear-gradient(180deg, rgba(9, 13, 22, 0.6) 0%, rgba(9, 13, 22, 0.9) 100%), url('fv.jpg');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
-        <!-- 背景透かし英字 -->
-        .bg-watermark {
-            position: absolute;
-            font-family: 'Teko', sans-serif;
-            text-transform: uppercase;
-            font-size: 15vw;
-            line-height: 0.8;
-            color: rgba(255, 255, 255, 0.02);
-            font-weight: 700;
-            pointer-events: none;
-            z-index: 0;
-            user-select: none;
-            white-space: nowrap;
-        }
-
-        <!-- アニメーション -->
+        /* アニメーション */
         .reveal { 
             opacity: 0; 
             transform: translateY(30px); 
@@ -59,7 +47,7 @@
             transform: translateY(0); 
         }
 
-        <!-- スタイリッシュボーダー・グラスモーフィズム -->
+        /* スタイリッシュボーダー・グラスモーフィズム */
         .glass-card {
             background: rgba(17, 24, 39, 0.75);
             backdrop-filter: blur(12px);
@@ -70,7 +58,7 @@
             border-color: rgba(56, 189, 248, 0.4);
         }
 
-        <!-- ネオングラデーション -->
+        /* ネオングラデーション */
         .text-gradient-cyan {
             background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
             -webkit-background-clip: text;
@@ -87,10 +75,10 @@
             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
         }
 
-        <!-- スクロールマージン -->
+        /* スクロールマージン */
         section { scroll-margin-top: 80px; }
 
-        <!-- スクロールダウンアイコン -->
+        /* スクロールダウンアイコン */
         .scroll-down-line {
             width: 1px;
             height: 50px;
@@ -104,7 +92,7 @@
             100% { transform: scaleY(0); transform-origin: bottom; }
         }
 
-        <!-- モバイルメニュー -->
+        /* モバイルメニュー */
         #mobile-menu {
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             transform: translateX(100%);
@@ -280,7 +268,6 @@
 
     <!-- 最新ニュース・イベント（自動反映コンテナ） -->
     <section id="news" class="py-20 bg-[#090d16] relative border-b border-white/5">
-        <div class="bg-watermark top-0 right-0">NEWS & EVENT</div>
         <div class="max-w-6xl mx-auto px-4 relative z-10">
             <div class="text-center mb-16 reveal">
                 <span class="text-sky-400 font-en font-bold tracking-[0.3em] uppercase text-xs block mb-2">NEWS & EVENT</span>
@@ -295,7 +282,6 @@
 
     <!-- 指導理念 -->
     <section id="philosophy" class="py-24 bg-[#0d131f] relative overflow-hidden">
-        <div class="bg-watermark top-1/4 left-0">PHILOSOPHY</div>
         <div class="max-w-6xl mx-auto px-4 relative z-10">
             <div class="text-center mb-16 reveal">
                 <span class="text-sky-400 font-en font-bold tracking-[0.3em] uppercase text-xs block mb-2">PHILOSOPHY</span>
@@ -327,7 +313,6 @@
 
     <!-- スケジュール・日程会場 -->
     <section id="schedule" class="py-24 bg-[#090d16] relative overflow-hidden">
-        <div class="bg-watermark top-10 right-0">SCHEDULE</div>
         <div class="max-w-5xl mx-auto px-4 relative z-10">
             <div class="text-center mb-16 reveal">
                 <span class="text-sky-400 font-en font-bold tracking-[0.3em] uppercase text-xs block mb-2">CLASSES & TIMES</span>
@@ -375,7 +360,6 @@
 
     <!-- スクール特徴 -->
     <section id="feature" class="py-24 bg-[#0d131f] relative overflow-hidden">
-        <div class="bg-watermark bottom-10 right-0">FEATURES</div>
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center mb-20 reveal">
                 <span class="text-sky-400 font-en font-bold tracking-[0.3em] uppercase text-xs block mb-2">OUR STRENGTH</span>
@@ -421,7 +405,6 @@
 
     <!-- 選抜コース BASIC＋ -->
     <section id="basic-plus" class="py-24 bg-[#090d16] relative overflow-hidden border-t border-b border-amber-500/20">
-        <div class="bg-watermark top-10 left-0 text-amber-500/5">BASIC PLUS</div>
         <div class="max-w-6xl mx-auto px-4 relative z-10">
             <div class="glass-card rounded-[3rem] p-8 md:p-14 border border-amber-500/30 relative overflow-hidden shadow-2xl">
                 <div class="absolute -top-24 -right-24 w-80 h-80 bg-amber-500/10 blur-[100px] rounded-full pointer-events-none"></div>
@@ -466,7 +449,6 @@
 
     <!-- パーソナルトレーニング -->
     <section id="personal" class="py-24 bg-[#0d131f] relative overflow-hidden">
-        <div class="bg-watermark top-10 right-0">PERSONAL</div>
         <div class="max-w-6xl mx-auto px-4 relative z-10">
             <div class="text-center mb-16 reveal">
                 <span class="text-sky-400 font-en font-bold tracking-[0.3em] uppercase text-xs block mb-2">INDIVIDUAL LESSON</span>
@@ -535,7 +517,6 @@
 
     <!-- コーチ紹介 -->
     <section id="coach" class="py-24 bg-[#090d16] relative overflow-hidden">
-        <div class="bg-watermark top-10 left-0">COACHES</div>
         <div class="max-w-6xl mx-auto px-4 relative z-10">
             <div class="text-center mb-20 reveal">
                 <span class="text-sky-400 font-en font-bold tracking-[0.3em] uppercase text-xs block mb-2">INSTRUCTORS</span>
@@ -586,7 +567,6 @@
 
     <!-- お問い合わせ & 体験申し込み -->
     <section id="contact" class="py-24 bg-[#0d131f] relative overflow-hidden">
-        <div class="bg-watermark bottom-0 left-0">CONTACT</div>
         <div class="max-w-4xl mx-auto px-4 relative z-10">
             <!-- SNSボタングループ -->
             <div class="glass-card rounded-3xl p-8 md:p-12 text-center mb-12 shadow-2xl reveal relative overflow-hidden border border-white/10">
