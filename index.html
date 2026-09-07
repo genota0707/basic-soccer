@@ -138,14 +138,14 @@
             }
         ],
 
-        // --- 2. パーソナルトレーニングの最新予約空き日程 ---
+     // --- 2. パーソナルトレーニングの最新予約空き日程 ---
         personalSchedule: {
-            campaignText: "【9月限定キャンペーン】 初回体験特別価格 3,300円（税込） / 90分（通常 6,600円）",
+            campaignText: "【初回キャンペーン】 初回体験特別価格 3,300円（税込） / 90分（通常 6,600円）",
             slots: [
                 {
                     date: "9月5日（土）",
                     times: [
-                        { time: "① 14:00〜15:30", status: "✕ 満席（受付終了）" },
+                        { time: "① 14:00〜15:30", status: "◯ 空きあり" },
                         { time: "② 16:30〜18:00", status: "✕ 満席（受付終了）" }
                     ]
                 },
@@ -153,7 +153,7 @@
                     date: "9月19日（土）",
                     times: [
                         { time: "① 14:00〜15:30", status: "✕ 満席（受付終了）" },
-                        { time: "② 16:30〜18:00", status: "✕ 満席（受付終了）" }
+                        { time: "② 16:30〜18:00", status: "◯ 空きあり" }
                     ]
                 },
                 {
@@ -162,9 +162,67 @@
                         { time: "① 14:00〜15:30", status: "✕ 満席（受付終了）" },
                         { time: "② 16:30〜18:00", status: "◯ 空きあり" }
                     ]
-                }
-            ]
-        },
+                },
+                {
+                    date: "10月4日（日）",
+                    times: [
+                        { time: "① 9:30〜11:00", status: "◯ 空きあり" },
+                        { time: "② 13:00〜14:30", status: "◯ 空きあり" },
+                        { time: "③ 16:30〜18:00", status: "◯ 空きあり" }
+                    ]
+                },
+                {
+                    date: "10月10日（土）",
+                    times: [
+                        { time: "① 13:30〜15:00", status: "◯ 空きあり" },
+                        { time: "② 16:30〜18:00", status: "◯ 空きあり" }
+                    ]
+                },
+                {
+                    date: "10月11日（日）",
+                    times: [
+                        { time: "① 9:30〜11:00", status: "◯ 空きあり" },
+                        { time: "② 13:00〜14:30", status: "◯ 空きあり" },
+                        { time: "③ 16:30〜18:00", status: "◯ 空きあり" }
+                    ]
+                },
+                {
+                    date: "10月17日（土）",
+                    times: [
+                        { time: "① 13:30〜15:00", status: "◯ 空きあり" },
+                        { time: "② 16:30〜18:00", status: "◯ 空きあり" }
+                    ]
+HTMLの `SITE_CONFIG` 内にある `personalSchedule` 部分（約300行目）をそのまま差し替えられるよう、1行ごとにコンパクトにまとめたコードです。右上のコピーボタン等でそのままご利用いただけます。
+
+```javascript
+        // --- 2. パーソナルトレーニングの最新予約空き日程 ---
+        personalSchedule: {
+            campaignText: "【初回キャンペーン】 初回体験特別価格 3,300円（税込） / 90分（通常 6,600円）",
+            slots: [
+                { date: "9月5日（土）", times: [{ time: "① 14:00〜15:30", status: "◯ 空きあり" }, { time: "② 16:30〜18:00", status: "✕ 満席（受付終了）" }] },
+                { date: "9月19日（土）", times: [{ time: "① 14:00〜15:30", status: "✕ 満席（受付終了）" }, { time: "② 16:30〜18:00", status: "◯ 空きあり" }] },
+                { date: "9月26日（土）", times: [{ time: "① 14:00〜15:30", status: "✕ 満席（受付終了）" }, { time: "② 16:30〜18:00", status: "◯ 空きあり" }] },
+                { date: "10月4日（日）", times: [{ time: "① 9:30〜11:00", status: "◯ 空きあり" }, { time: "② 13:00〜14:30", status: "◯ 空きあり" }, { time: "③ 16:30〜18:00", status: "◯ 空きあり" }] },
+                { date: "10月10日（土）", times: [{ time: "① 13:30〜15:00", status: "◯ 空きあり" }, { time: "② 16:30〜18:00", status: "◯ 空きあり" }] },
+                { date: "10月11日（日）", times: [{ time: "① 9:30〜11:00", status: "◯ 空きあり" }, { time: "② 13:00〜14:30", status: "◯ 空きあり" }, { time: "③ 16:30〜18:00", status: "◯ 空きあり" }] },
+                { date: "10月17日（土）", times: [{ time: "① 13:30〜15:00", status: "◯ 空きあり" }, { time: "② 16:30〜18:00", status: "◯ 空きあり" }] },
+                { date: "10月18日（日）", times: [{ time: "① 9:30〜11:00", status: "◯ 空きあり" }, { time: "② 13:00〜14:30", status: "◯ 空きあり" }, { time: "③ 16:30〜18:00", status: "◯ 空きあり" }] },
+                { date:差し替え用のコードをそのまま全選択・コピーしていただけるよう、Google Keep および Google ドキュメントに保存いたしました。以下のいずれかからワンクリックで開いてコピーいただけます。
+
+* **Google Keep（手軽に全選択・コピー）**：
+  [HP更新用_パーソナルトレーニング10月日程コード（Keepメモ）](https://keep.google.com/?note=1zA7IjWfK6pWltCFI4HSDmiGHOWFqjIKnA359uLISTvPl3-fPnC3_n_1nBPtGFg)
+* **Google ドキュメント**：
+  [personalSchedule_コピペ用コード（Googleドキュメント）](https://docs.google.com/document/d/19lb2p_v5cf2AJoqRSMJn7ANr-IV6PT-Fq01l18MbGCU/edit?usp=drivesdk&ouid=100068326091814075501)
+
+---
+
+### 差し替え手順
+1. 上記リンク先のテキスト（`personalSchedule: { ... }` 全体）をコピーします。
+2. HTMLファイル（またはGitHub上のファイル）の約300行目付近にある `personalSchedule: { ... },` の部分を選択し、そのまま貼り付けて上書き保存してください。
+
+※ファイル全体をそのままご利用・差し替えされる場合は、反映済みのHTMLファイル [index_latest_updated.html](https://drive.google.com/file/d/1Z3CAu7cisp4cmecW78iC7rSZ4-Zm6bNm/view?usp=drivesdk) もご活用いただけます。
+
+http://googleusercontent.com/action_card_content/cc115601-b35f-495a-b177-bd0ba2bddf5d
 
         // --- 3. 共通リンク設定 ---
         links: {
