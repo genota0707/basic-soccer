@@ -114,7 +114,7 @@
 
     <!-- ================================================================= -->
 
-    <!-- ⚽ 【ここを編集】更新設定エリア（GitHub上でここを書き換えるだけ！） -->
+    <!-- ⚽ お知らせと共通リンクの設定。日程・空き枠は編集用スプレッドシートで更新します。 -->
 
     <!-- ================================================================= -->
     <script>
@@ -146,84 +146,9 @@
             }
         ],
 
-        // --- 2. パーソナルトレーニングの最新予約空き日程 ---
+        // --- 2. パーソナルトレーニングの料金案内 ---
         personalSchedule: {
             campaignText: "【初回キャンペーン】 初回体験特別価格 3,300円（税込） / 90分（通常 6,600円）",
-            slots: [
-                {
-                    date: "9月5日（土）",
-                    times: [
-                        { time: "① 14:00〜15:30", status: "✕ 満席（受付終了）" },
-                        { time: "② 16:30〜18:00", status: "✕ 満席（受付終了）" }
-                    ]
-                },
-                {
-                    date: "9月19日（土）",
-                    times: [
-                        { time: "① 14:00〜15:30", status: "✕ 満席（受付終了）" },
-                        { time: "② 16:30〜18:00", status: "✕ 満席（受付終了）" }
-                    ]
-                },
-                {
-                    date: "9月26日（土）",
-                    times: [
-                        { time: "① 14:00〜15:30", status: "✕ 満席（受付終了）" },
-                        { time: "② 16:30〜18:00", status: "◯ 空きあり" }
-                    ]
-                },
-                {
-                    date: "10月4日（日）",
-                    times: [
-                        { time: "① 9:30〜11:00", status: "◯ 空きあり" },
-                        { time: "② 13:00〜14:30", status: "◯ 空きあり" },
-                        { time: "③ 16:30〜18:00", status: "◯ 空きあり" }
-                    ]
-                },
-                {
-                    date: "10月10日（土）",
-                    times: [
-                        { time: "① 13:30〜15:00", status: "◯ 空きあり" },
-                        { time: "② 16:30〜18:00", status: "◯ 空きあり" }
-                    ]
-                },
-                {
-                    date: "10月11日（日）",
-                    times: [
-                        { time: "① 9:30〜11:00", status: "◯ 空きあり" },
-                        { time: "② 13:00〜14:30", status: "◯ 空きあり" },
-                        { time: "③ 16:30〜18:00", status: "◯ 空きあり" }
-                    ]
-                },
-                {
-                    date: "10月17日（土）",
-                    times: [
-                        { time: "① 13:30〜15:00", status: "◯ 空きあり" },
-                        { time: "② 16:30〜18:00", status: "◯ 空きあり" }
-                    ]
-                },
-                {
-                    date: "10月18日（日）",
-                    times: [
-                        { time: "① 9:30〜11:00", status: "◯ 空きあり" },
-                        { time: "② 13:00〜14:30", status: "◯ 空きあり" },
-                        { time: "③ 16:30〜18:00", status: "◯ 空きあり" }
-                    ]
-                },
-                {
-                    date: "10月24日（土）",
-                    times: [
-                        { time: "① 13:30〜15:00", status: "◯ 空きあり" },
-                        { time: "② 16:30〜18:00", status: "◯ 空きあり" }
-                    ]
-                },
-                {
-                    date: "10月31日（土）",
-                    times: [
-                        { time: "① 13:30〜15:00", status: "◯ 空きあり" },
-                        { time: "② 16:30〜18:00", status: "◯ 空きあり" }
-                    ]
-                }
-            ]
         },
 
         // --- 3. 共通リンク設定 ---
@@ -417,6 +342,10 @@
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </a>
                 </div>
+            </div>
+            <div class="mt-12 reveal">
+                <h3 class="text-xl font-bold text-white mb-5">これからの開催日程</h3>
+                <div id="event-schedule-container" class="grid sm:grid-cols-2 gap-4" aria-live="polite"></div>
             </div>
         </div>
     </section>
@@ -794,34 +723,8 @@
 
         // --- 描画処理：パーソナル日程 ---
         const campaignBadge = document.getElementById('personal-campaign-badge');
-        const personalContainer = document.getElementById('personal-schedule-container');
         if (campaignBadge && SITE_CONFIG.personalSchedule) {
             campaignBadge.innerText = SITE_CONFIG.personalSchedule.campaignText;
-        }
-        if (personalContainer && SITE_CONFIG.personalSchedule && SITE_CONFIG.personalSchedule.slots) {
-            SITE_CONFIG.personalSchedule.slots.forEach(d => {
-                let timesHtml = '';
-                d.times.forEach(t => {
-                    const isAvailable = t.status.includes('空き');
-                    const badgeBg = isAvailable ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-slate-700 text-slate-400';
-                    timesHtml += `
-                    <div class="flex items-center justify-between bg-black/40 p-3 rounded-xl border border-white/5">
-                        <span class="text-xs sm:text-sm font-bold text-white">${t.time}</span>
-                        <span class="text-[11px] font-bold px-2 py-0.5 rounded-md ${badgeBg}">${t.status}</span>
-                    </div>`;
-                });
-                const slotHtml = `
-                <div class="bg-white/5 p-5 rounded-2xl border border-white/10 hover:border-sky-500/40 transition">
-                    <div class="flex items-center gap-2 mb-4 border-b border-white/10 pb-2">
-                        <span class="w-2 h-2 rounded-full bg-sky-400"></span>
-                        <h4 class="font-bold text-base text-sky-400">${d.date}</h4>
-                    </div>
-                    <div class="space-y-2">
-                        ${timesHtml}
-                    </div>
-                </div>`;
-                personalContainer.insertAdjacentHTML('beforeend', slotHtml);
-            });
         }
 
         // --- モバイルメニュー開閉制御 ---
@@ -888,5 +791,6 @@
             if (e.key === 'Escape') closeOverviewModal();
         });
     </script>
+    <script src="schedule.js"></script>
 </body>
 </html>
