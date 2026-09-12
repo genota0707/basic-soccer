@@ -1,4 +1,4 @@
-// 日程・空き枠は data/schedule.json から表示します。表の同期は GitHub Actions が行います。
+// 日程・空き枠は data/schedule.json から表示します。編集用シートから定期同期します。
 (async () => {
     const eventContainer = document.getElementById('event-schedule-container');
     const bookingContainer = document.getElementById('personal-schedule-container');
