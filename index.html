@@ -124,6 +124,46 @@
         // 新しいお知らせを追加したい場合は、先頭にカンマ区切りで追加してください
         news: [
             {
+                badge: "10月イベント",
+                badgeColor: "sky",
+                date: "2026.10.12",
+                title: "GKスクール＆シュートスクール",
+                desc: "10月12日（月・祝）17:15〜18:45｜小学2〜6年生｜定員：GK 10名・シュート 15名｜近鉄富吉駅から徒歩15分。詳細な場所・お申し込みは公式LINEへお問い合わせください。",
+                link: "https://lin.ee/yodgItoA",
+                linkText: "LINEで詳細を問い合わせる",
+                isExternal: true
+            },
+            {
+                badge: "10月イベント",
+                badgeColor: "sky",
+                date: "2026.10.24",
+                title: "フットサルスクール｜テーマ：トゥーキック",
+                desc: "10月24日（土）17:15〜18:45｜小学1〜6年生｜定員：小学1〜3年生 10名・小学4〜6年生 10名｜近鉄富吉駅から徒歩15分。公式LINEに「フットサルスクール」と送信してお申し込みください。",
+                link: "https://lin.ee/yodgItoA",
+                linkText: "LINEで申し込む",
+                isExternal: true
+            },
+            {
+                badge: "10月イベント",
+                badgeColor: "sky",
+                date: "2026.10.31",
+                title: "守備強化スクール",
+                desc: "10月31日（土）17:15〜18:45｜小学3〜6年生・定員20名。小学2年生はお問い合わせください。近鉄富吉駅から徒歩15分。公式LINEに「守備強化」と送信してお申し込みください。",
+                link: "https://lin.ee/yodgItoA",
+                linkText: "LINEで申し込む",
+                isExternal: true
+            },
+            {
+                badge: "幼児向け",
+                badgeColor: "sky",
+                date: "2026.10.24・31",
+                title: "幼児単発スクール",
+                desc: "10月24日（土）・31日（土）11:00〜11:50｜4〜6歳・定員10名｜戸田（屋外）。はじめてのサッカーにもおすすめです。詳細な場所はお問い合わせください。公式LINEに「幼児単発」と送信してお申し込みください。",
+                link: "https://lin.ee/yodgItoA",
+                linkText: "LINEで申し込む",
+                isExternal: true
+            },
+            {
                 badge: "パーソナルトレーニング",
                 badgeColor: "sky", // "sky" (水色) または "amber" (金色)
                 date: "2026.09.02",
@@ -699,9 +739,9 @@
                 const targetAttr = item.isExternal ? 'target="_blank"' : '';
                 const cardHtml = `
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col group hover:-translate-y-1 transition duration-300 ${cardBorderClass}">
-                    <div class="h-48 sm:h-56 relative overflow-hidden bg-slate-800">
-                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute top-4 left-4 flex gap-2">
+                    <div class="${item.image ? 'h-48 sm:h-56 relative overflow-hidden bg-slate-800' : 'relative bg-slate-800/60 px-6 py-5 sm:px-8'}">
+                        ${item.image ? `<img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">` : ''}
+                        <div class="${item.image ? 'absolute top-4 left-4' : ''} flex flex-wrap gap-2">
                             <span class="${badgeColorClass} text-xs font-bold px-3 py-1 rounded-full shadow">${item.badge}</span>
                             <span class="bg-black/60 backdrop-blur-md text-white text-xs font-mono px-3 py-1 rounded-full">${item.date}</span>
                         </div>
